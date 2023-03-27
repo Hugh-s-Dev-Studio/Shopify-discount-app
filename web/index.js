@@ -183,11 +183,11 @@ const runDiscountMutation = async (req, res, mutation) => {
     return res.status(500).send({ error: error.response });
   }  
 };
-
+// Endpoint to create code-based discounts
 app.post("/api/discounts/code", async (req, res) => {
   await runDiscountMutation(req, res, CREATE_CODE_MUTATION);
 });
-
+// Endpoint to create automatic discounts
 app.post("/api/discounts/automatic", async (req, res) => {
   await runDiscountMutation(req, res, CREATE_AUTOMATIC_MUTATION);
 });
